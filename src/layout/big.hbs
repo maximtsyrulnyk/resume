@@ -4,7 +4,6 @@
 --}}
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>
       {{page.title}}
@@ -16,36 +15,18 @@
 
   <body>
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
+    {{!
     {{#with header}}
-      <header>
-        <div>
-          <h1>{{name.firstname}} {{name.lastname}}</h1>
-        </div>
-        <div>
-          <b>{{position}}</b>
-        </div>
-        <br>
-        <div>
-          <em>{{salary}}</em>
-          <br>
-        </div>
-        <br>
-        <div>
-          <address>{{address}}</address>
-        </div>
-        <br>
-        <hr>
-      </header>
-    {{/with}}
-
     {{> nav}}
-
+    <br>
+    <hr>
     {{{body}}}
-
+    <br>
+    <hr>
+    {{> footer social=footer.social firstname=header.name.firstname lastname=header.name.lastname 
+    address=header.address}}
     {{#with footer}}
       <footer>
-        <hr>
-        <br>
         <div>
           {{#with social}}
             {{> link data=email blank=true}}
@@ -66,5 +47,4 @@
       </footer>
       {{/with}}
   </body>
-
 </html>
