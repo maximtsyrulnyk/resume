@@ -1,0 +1,88 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with bio}} 
+    <main>
+        <section>
+            {{> title data='Bio' big=true}}
+
+            <hr>
+            <h1>{{name}}</h1>
+            
+            <hr>
+            <br>
+
+            <p><mark>birth date:{{birthdate}}</mark></p>
+            <p><mark>birth place{{birthplace}}:</mark></p>
+            <p><mark>death date{{deathdate}}:</mark></p>
+            <p><mark>death place{{deathplace}}:</mark></p>
+            <p><mark>nationality{{nationality}}:</mark></p>
+            <p><mark>occupation{{occupation}}:</mark></p>
+            <p><mark>known for{{known_for}}:</mark></p>
+            <p><mark>education{{education}}:</mark></p>
+            <p><mark>notable publications{{notable_publications}}:</mark></p>
+            <p><mark>title{{title}}:</mark></p>
+            <p><mark>year{{year}}:</mark></p>
+            <p><mark>publisher{{publisher}}:</mark></p>
+            <p><mark>partners{{partners}}:</mark></p>
+            <p><mark>name{{name}}:</mark></p>
+            <p><mark>relationship{{relationship}}:</mark></p>
+            <p><mark>years{{years}}:</mark></p>
+            <p><mark>awards{{awards}}:</mark></p>
+            <p><mark>title{{title}}:</mark></p>
+            <p><mark>year{{year}}:</mark></p>
+            <p><mark>description{{description}}:</mark></p>
+            <p><mark>influences{{influences}}:</mark></p>
+            <p><mark>influenced{{influenced}}:</mark></p>
+            <p><mark>quotes{{quotes}}:</mark></p>
+            <p><mark>major_discoveries{{major_discoveries}}:</mark></p>
+            <p><mark>title{{title}}:</mark></p>
+            <p><mark>year{{year}}:</mark></p>
+            <p><mark>description{{description}}:</mark></p>
+            <p><mark>contributions{{contributions}}:</mark></p>
+            <p><mark>title{{title}}:</mark></p>
+            <p><mark>description{{description}}:</mark></p>
+            <p><mark>year{{year}}:</mark></p>
+            <p><mark>field{{field}}:</mark></p>
+            <br>
+
+           {{#with address}} 
+                <b><address><p>Address</p></address></b>
+                <ul>
+                    <li><address>street: {{street}}</address></li>
+                    <li><address>city: {{city}}</address></li>
+                    <li><address>state: {{state}}</address></li>
+                    <li><address>zip: {{zip}}</address></li>
+                    <li><address>country: {{country}}</address></li>
+                </ul>
+           {{/with}}
+           <br>
+           <b><p>Education:</p></b>
+           {{#each education}} 
+            <ul>
+                <li>Degree: {{degree}}</li>
+                <li>Major: {{major}}</li>
+                <li>University: {{university}}</li>
+                <li>Year of Graduation {{graduationYear}}</li>
+            </ul>
+           {{/each}}
+           {{#each workExperience}}
+           <b><p>Work experience</p></b>
+            <ul>
+                <li>Company: {{company}}</li>
+                <li>Title: {{title}}</li>
+                <li>Start date: {{startDate}}</li>
+                <li>End date: {{endDate}}</li>
+                <li>Responsibilities: {{responsibilities}}</li>
+                <li>Year founded: {{year_founded}}</li>
+                <li>Industry: {{industry}}</li>
+                <li>Employees: {{employees}}</li>
+            </ul>
+           {{/each}}
+        </section>
+    </main>
+    {{/with}}
+</div>
