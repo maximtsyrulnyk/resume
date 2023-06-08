@@ -1,0 +1,60 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with program}} 
+    <main>
+        <section>
+            {{> title data='Program' big=true}}
+
+            <hr>
+            <h1>{{name}}</h1>
+            
+            <hr>
+            <br>
+
+            <p><mark>City:{{city}}</mark> Paris</p>
+            <p><mark>Country{{country}}:</mark>France</p>
+            <p><mark>Date{{date}}:</mark>2023-06-15</p>
+            <br>
+
+           {{#with program}} 
+                <b><address><p>Location</p></address></b>
+                <ul>
+                    <li><address>city: {{city}}</address></li>
+                    <li><address>country: {{country}}</address></li>
+                    <li><address>date: {{date}}</address></li>
+                    <li><address>program: {{program}}</address></li>
+                    <li><address>guide: {{guide}}</address></li>
+                    <li><address>performers: {{performers}}</address></li>
+                </ul>
+           {{/with}}
+           <br>
+           <b><p>Education:</p></b>
+           {{#each education}} 
+            <ul>
+                <li>Degree: {{degree}}</li>
+                <li>Major: {{major}}</li>
+                <li>University: {{university}}</li>
+                <li>Year of Graduation {{graduationYear}}</li>
+            </ul>
+           {{/each}}
+           {{#each workExperience}}
+           <b><p>Work experience</p></b>
+            <ul>
+                <li>Company: {{company}}</li>
+                <li>Title: {{title}}</li>
+                <li>Start date: {{startDate}}</li>
+                <li>End date: {{endDate}}</li>
+                <li>Responsibilities: {{responsibilities}}</li>
+                <li>Year founded: {{year_founded}}</li>
+                <li>Industry: {{industry}}</li>
+                <li>Employees: {{employees}}</li>
+            </ul>
+           {{/each}}
+        </section>
+    </main>
+    {{/with}}
+</div>
