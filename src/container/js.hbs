@@ -1,0 +1,72 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with js}} 
+    <main>
+        <section>
+            {{> title data='js' big=true}}
+
+            <hr>
+            <h1>{{name}}</h1>
+            
+            <hr>
+            <br>
+
+            <p><mark>description:{{description}}</mark></p>
+            <p><mark>history{{history}}:</mark></p>
+            <p><mark>year{{year}}:</mark></p>
+            <p><mark>founder{{founder}}:</mark></p>
+            <p><mark>types{{types}}:</mark></p>
+            <p><mark>syntax{{syntax}}:</mark></p>
+            <p><mark>variables{{variables}}:</mark></p>
+            <p><mark>functions{{functions}}:</mark></p>
+            <p><mark>conditionals{{conditionals}}:</mark></p>
+            <p><mark>loops{{loops}}:</mark></p>
+            <p><mark>classes{{classes}}:</mark></p>
+            <p><mark>features{{features}}:</mark></p>
+            <p><mark>libraries{{libraries}}:</mark></p>
+            <p><mark>tools{{tools}}:</mark></p>
+            <p><mark>community{{community}}:</mark></p>
+            <p><mark>name{{name}}:</mark></p>
+            <p><mark>type{{type}}:</mark></p>
+            
+            <br>
+
+           {{#with js}} 
+                <b><address><p>js</p></address></b>
+                <ul>
+                    <li><address>name: {{name}}</address></li>
+                    <li><address>description: {{description}}</address></li>
+                    <li><address>history: {{history}}</address></li>
+                    <li><address>year: {{year}}</address></li>
+                    <li><address>founder: {{founder}}</address></li>
+                </ul>
+           {{/with}}
+           <br>
+           <b><p>types:</p></b>
+           {{#each types}} 
+            
+           {{/each}}
+           {{#each syntax}}
+           <b><p>syntax</p></b>
+            <ul>
+                <li>variables: {{variables}}</li>
+                <li>functions: {{functions}}</li>
+                <li>conditionals: {{conditionals}}</li>
+                <li>loops: {{loops}}</li>
+                <li>classes: {{classes}}</li>
+                <li>features: {{features}}</li>
+                <li>libraries: {{libraries}}</li>
+                <li>tools: {{tools}}</li>
+                <li>community: {{community}}</li>
+                <li>name: {{name}}</li>
+                <li>type: {{type}}</li>
+            </ul>
+           {{/each}}
+        </section>
+    </main>
+    {{/with}}
+</div>
